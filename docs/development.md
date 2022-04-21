@@ -1,28 +1,21 @@
 # Development
 
-Add details here to give a brief overview of how to work with the provider APIs.
-Please reference any SDKs or API docs used to help build the integration here.
-
-## Prerequisites
-
-Supply details about software or tooling (like maybe Docker or Terraform) that
-is needed for development here.
-
-Please supply references to documentation that details how to install those
-dependencies here.
-
-Tools like Node.js and NPM are already covered in the [README](../README.md) so
-don't bother documenting that here.
+This integration focuses on [Travis CI](https://www.travis-ci.com/) and is using
+[Travis CI API](https://developer.travis-ci.com/) for interacting with the
+Travis CI resources.
 
 ## Provider account setup
 
-Please provide information about the steps needed to create an account with a
-provider. Images and references to a provider's documentation is very helpful
-for new developers picking up your work.
+Travis CI requires a GitHub account to log in. Once you have a GitHub account,
+you can link your GitHub account to Travis CI.
+
+1. Sign up to Travis CI using your GitHub account.
+2. In the dashboard, click on your icon on the top-right and select Settings.
+3. In the Repositories tab, under GitHub Apps Integration, click Activate.
+4. Set the repositories Travis CI will be installed on.
+5. Go to the Settings tab and under API authentication, retrieve your token.
 
 ## Authentication
 
-Supply details here for information on how to authenticate with a provider so
-that developers have an idea of what's needed to hit APIs. It may be useful to
-provide explanations for each value specified in the
-[`IntegrationInstanceConfigFieldMap`](../src/config.ts).
+Provide the `TOKEN` and the `HOSTNAME` (format is: "example.travis-ci.com"). You
+can use [`.env.example`](../.env.example) as a reference.
