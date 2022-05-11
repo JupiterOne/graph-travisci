@@ -9,6 +9,7 @@ import {
 
 import { createAPIClient } from '../../client';
 import { IntegrationConfig } from '../../config';
+import { TravisCIRepository } from '../../types';
 import { getUserKey } from '../account/converter';
 import {
   ACCOUNT_ENTITY_KEY,
@@ -44,7 +45,7 @@ export async function buildUserAndCodeReposRelationship({
       _type: Entities.CODEREPO._type,
     },
     async (codeRepoEntity) => {
-      const coderepo = getRawData<any>(codeRepoEntity);
+      const coderepo = getRawData<TravisCIRepository>(codeRepoEntity);
       if (!coderepo) {
         logger.warn(
           { _key: codeRepoEntity._key },
@@ -55,7 +56,7 @@ export async function buildUserAndCodeReposRelationship({
 
       if (
         coderepo.owner['@type'] === 'user' &&
-        `${coderepo.owner.id}` === userEntity.id
+        coderepo.owner.id.toString() === userEntity.id
       ) {
         await jobState.addRelationship(
           createDirectRelationship({

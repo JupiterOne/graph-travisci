@@ -9,6 +9,9 @@ export type TravisCIRepository = {
   shared: boolean;
   config_validation: boolean;
   server_type: string;
+  owner: {
+    id: string;
+  };
 };
 
 export type TravisCIUser = {
