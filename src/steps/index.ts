@@ -1,6 +1,6 @@
 import { accountSteps } from './account';
-import { accessSteps } from './access';
+import { codeRepoSteps } from './code-repository';
 
-const integrationSteps = [...accountSteps, ...accessSteps];
+const integrationSteps = [...accountSteps, ...codeRepoSteps];
 
 export { integrationSteps };
