@@ -8,7 +8,15 @@ and this project adheres to
 
 ## [Unreleased]
 
+## 1.0.0 - 2022-05-11
+
 ### Added
 
 - Ingest new entities
   - `travisci_account`
+  - `travisci_coderepo`
+  - `travisci_user`
+- Build new relationships
+  - `travisci_account_is_travisci_user`
+  - `travisci_user_created_travisci_coderepo`
+  - `travisci_user_uses_travisci_coderepo`
